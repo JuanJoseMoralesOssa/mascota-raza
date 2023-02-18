@@ -1,0 +1,11 @@
+{
+    "db-connections": {
+        "mongodb": {
+            "host": "cluster0.otd3u.mongodb.net",
+            "user": "pets_rest_api_user",
+            "password": "NoVHgNFa8G5PrOfN",
+            "dbname":"PetsDB"
+        }
+    },
+    "server-port": 3000
+}

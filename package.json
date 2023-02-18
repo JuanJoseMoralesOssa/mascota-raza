@@ -1,19 +1,24 @@
 {
-  "name": "mascota-raza",
+  "name": "mascota-raza-rest-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Pets api",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JuanJoseMoralesOssa/mascota-raza.git"
-  },
-  "author": "Juan Jose Morales",
+  "keywords": [
+    "Pets",
+    "race",
+    "rest",
+    "api"
+  ],
+  "author": "Juan Jose, Sergio, Andres",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JuanJoseMoralesOssa/mascota-raza/issues"
-  },
-  "homepage": "https://github.com/JuanJoseMoralesOssa/mascota-raza#readme"
+  "dependencies": {
+    "config": "^3.3.9",
+    "crypto-js": "^4.1.1",
+    "express": "^4.18.2",
+    "mongoose-unique-validator": "^3.1.0",
+    "moongose": "^1.0.0"
+  }
 }
