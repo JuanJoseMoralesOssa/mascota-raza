@@ -14,7 +14,7 @@ exports.createPet = (req, res, next) => {
         type: pet.type,
         weight: pet.weigth,
         sterilized: pet.sterilized,
-        specie: pet.specie,
+        specie: pet.specie
 
 
     };
@@ -30,13 +30,16 @@ exports.createPet = (req, res, next) => {
 
 exports.updatePet = (req, res, next) => {
     let pet = {
+        race_id: pet.race_id,
         code: pet.code,
-        common_name: pet.lastname,
-        scientific_name: pet.document,
-        characteristics: pet.characteristics,
-        origin: pet.origin,
-        size: pet.size,
-        character: pet.character
+        name: pet.name,
+        sex: pet.sex,
+        characteristics: pet.birth_date,
+        colour: pet.colour,
+        type: pet.type,
+        weight: pet.weigth,
+        sterilized: pet.sterilized,
+        specie: pet.specie
     };
     petDto.update({ _id: req.body.id }, pet, (err, data) => {
         if (err) {
