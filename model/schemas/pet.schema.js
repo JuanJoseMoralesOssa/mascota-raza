@@ -22,10 +22,10 @@ const petSchema = new mongoose.Schema({
         required: true
     },
     birth_date:{
-        type: "String",
+        type: "Date",
         required: true
     },
-    colour:{
+    color:{
         type: "String",
         required: true
     },

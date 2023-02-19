@@ -2,45 +2,53 @@
 
 const raceDto = require("../../model/dto/race.dto");
 
-
 exports.createRace = (req, res, next) => {
     let race = {
-        code: race.code,
-        common_name: race.common_name,
-        scientific_name: race.scientific_name,
-        characteristics: race.characteristics,
-        origin: race.origin,
-        size: race.size,
-        character: race.character
-
+        code: req.body.code,
+        common_name: req.body.common_name,
+        scientific_name: req.body.scientific_name,
+        characteristics: req.body.characteristics,
+        origin: req.body.origin,
+        size: req.body.size,
+        character: req.body.character,
     };
     raceDto.create(race, (err, data) => {
         if (err) {
-            return res.status(400).json({
-                error: err,
-            });
-        }
-
+            return res.status(400).json(
+                {
+                    error: err
+                }
+            );
+        };
+        res.status(201).json(
+            {
+                info: data,
+            }
+        );
     });
 };
 
 exports.updateRace = (req, res, next) => {
     let race = {
-        code: race.code,
-        common_name: race.common_name,
-        scientific_name: race.scientific_name,
-        characteristics: race.characteristics,
-        origin: race.origin,
-        size: race.size,
-        character: race.character
+        code: req.body.code,
+        common_name: req.body.common_name,
+        scientific_name: req.body.scientific_name,
+        characteristics: req.body.characteristics,
+        origin: req.body.origin,
+        size: req.body.size,
+        character: req.body.character
     };
-    raceDto.update({ _id: req.body.id }, race, (err, data) => {
+    raceDto.updateOne({ _id: req.body.id }, race, (err, data) => {
         if (err) {
             return res.status(400).json({
                 error: err,
             });
-        }
-
+        };
+        res.status(201).json(
+            {
+                info: data,
+            }
+        );
     });
 };
 
@@ -50,7 +58,7 @@ exports.getAll = (req, res, next) => {
             return res.status(400).json({
                 error: err,
             });
-        }
+        };
         res.status(200).json({
             info: data,
         });
@@ -70,12 +78,14 @@ exports.getByCode = (req, res, next) => {
     });
 };
 
-exports.deleteRace = () => {
+exports.deleteRace = (req, res, next) => {
     raceDto.delete({ _id: req.body.id }, (err, data) => {
         if (err) {
-            return res.status(400).json({
-                error: err,
-            });
+            return res.status(400).json(
+                {
+                    error: err,
+                }
+            );
         }
         res.status(204).json();
     });
